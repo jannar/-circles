@@ -27,9 +27,13 @@ public class GetBiggerScript : MonoBehaviour {
 
 	}
 
-	void OnCollisionEnter2D(Collider2D col){
+	void OnTriggerEnter2D(Collider2D col){
 
-		col.transform.localScale = new Vector3 (((xScale - .1f)),
-			(yScale - .1f), (zScale - .1f));
+		if (col.gameObject.CompareTag("Gray") || col.gameObject.CompareTag ("Green")) {
+			Debug.Log ("hit!");
+			//this.hit = true;
+//			col.transform.localScale = new Vector3 (((xScale + .1f)),
+//				(yScale + .1f), (zScale + .1f) * Time.deltaTime);
+		}
 	}
 }
