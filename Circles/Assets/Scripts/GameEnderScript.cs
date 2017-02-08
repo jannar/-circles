@@ -24,8 +24,9 @@ public class GameEnderScript : MonoBehaviour {
 	void Update () {
 
 		if (Vector3.Distance (fakeSun.transform.position, transform.position) < radius) {
-			if (gameObject.transform.localScale.x <= 2.5) {
+			if (gameObject.transform.localScale.x <= 2.75) {
 				Destroy (gameObject);
+				SceneManager.LoadScene (4);
 			}
 		}
 
