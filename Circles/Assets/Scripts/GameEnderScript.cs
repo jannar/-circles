@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 // finish this later!
 
@@ -31,6 +32,11 @@ public class GameEnderScript : MonoBehaviour {
 		if (Vector3.Distance (goal.transform.position, transform.position) < radius) {
 			if ((this.gameObject.transform.localScale.x >= goal.transform.localScale.x) && (this.gameObject.transform.localScale.y >= goal.transform.localScale.y)) {
 				Debug.Log ("you win yay" + " " + this.name);
+				if (this.name.Contains ("Gray")) {
+					SceneManager.LoadScene (2);
+				} else if (this.name.Contains ("Green")) {
+					SceneManager.LoadScene (3);
+				}
 			}
 		}
 		
